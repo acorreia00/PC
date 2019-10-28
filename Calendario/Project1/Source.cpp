@@ -22,10 +22,10 @@ void matrix(int dias, int total) {
 				}
 				c = 6;
 			}
-			else (soma < dias + 1); {
+			else if (soma < dias + 1) {
 				printf(" %02d ", mat[l][c]);
 			}
-			{
+			else{
 				break;
 			}
 		}
@@ -46,6 +46,7 @@ int main() {
 		mescontrol++;
 		ano = ano - 2000;
 		total = total + (ano * 365) + soma;
+		total = total % 7;
 		printf("\n\n");
 		ano = ano + 2000;
 		printf(" Calendario %d/%d\n\n", ano, mes);
