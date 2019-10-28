@@ -1,0 +1,8 @@
+﻿  Source.cpp
+D:\documentos\ISEL\programação\pc\Project1\Project1\Source.cpp(22,4): error C2143: syntax error: missing ';' before '}'
+D:\documentos\ISEL\programação\pc\Project1\Project1\Source.cpp(24,32): error C2059: syntax error: ';'
+D:\documentos\ISEL\programação\pc\Project1\Project1\Source.cpp(26,4): error C2181: illegal else without matching if
+D:\documentos\ISEL\programação\pc\Project1\Project1\Source.cpp(32,1): error C2059: syntax error: '}'
+D:\documentos\ISEL\programação\pc\Project1\Project1\Source.cpp(32,1): error C2143: syntax error: missing ';' before '}'
+D:\documentos\ISEL\programação\pc\Project1\Project1\Source.cpp(33,12): error C2143: syntax error: missing ';' before '{'
+D:\documentos\ISEL\programação\pc\Project1\Project1\Source.cpp(33,12): error C2447: '{': missing function header (old-style formal list?)
