@@ -10,7 +10,7 @@ void matrix(int dias, int total) {
 		for (c = 0; c < 7; ++c) {
 			soma++;
 			mat[l][c] = soma;
-			if (l = 1) {
+			if (l == 1) {
 				switch (total) {
 				case 6: printf("   ");
 				case 5: printf("   ");
@@ -36,7 +36,7 @@ void matrix(int dias, int total) {
 int main() {
 	int mes, ano, total = 6, dias[12] = { 31 , 28 , 31 , 30 , 31 , 30 , 31 , 31 , 30 , 31 , 30 , 31 }, mescontrol=0, soma=0;
 	do {
-		printf("introduza 1 ano e 1 mes\n");
+		printf("Introduza 1 ano e 1 mes\n");
 		scanf_s("%d", &ano);
 		scanf_s("%d", &mes);
 
@@ -48,8 +48,8 @@ int main() {
 		total = total + (ano * 365) + soma;
 		printf("\n\n");
 		ano = ano + 2000;
-		printf(" Calendario %d\\%d\n\n", ano, mes);
-		printf(" dom seg ter qua qui sex sab");
+		printf(" Calendario %d/%d\n\n", ano, mes);
+		printf(" Dom Seg Ter Qua Qui Sex Sab");
 
 		matrix(dias[mes - 1], total);
 
