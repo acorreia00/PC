@@ -1,5 +1,7 @@
 #include<stdio.h>
 #include<stdlib.h>
+
+
 void matrix(int dias, int total) {
 	int mat[6][7], l, c, soma;
 	soma = 0;
@@ -18,39 +20,41 @@ void matrix(int dias, int total) {
 				case 1: printf("   ");
 				case 0: printf("%02d ", mat[l][c]);
 				}
-				c=6
+				c = 6;
 			}
-			else (soma < dias+1) {
+			else (soma < dias + 1); {
 				printf(" %02d ", mat[l][c]);
 			}
-			else
 			{
 				break;
 			}
 		}
 	}
 }
+
+
 int main() {
-	int mes, ano, total=6, dias[12] = { 31 , 28 , 31 , 30 , 31 , 30 , 31 , 31 , 30 , 31 , 30 , 31 },mescontrol,soma;
+	int mes, ano, total = 6, dias[12] = { 31 , 28 , 31 , 30 , 31 , 30 , 31 , 31 , 30 , 31 , 30 , 31 }, mescontrol=0, soma=0;
 	do {
 		printf("introduza 1 ano e 1 mes\n");
 		scanf_s("%d", &ano);
 		scanf_s("%d", &mes);
 
 	} while (!(mes >= 1 && mes <= 12 && ano >= 2000 && ano <= 2099));
-	while (mescontrol <= (mes - 1)) {
+	while (mescontrol < (mes - 1)) {
 		soma = soma + dias[mescontrol];
 		mescontrol++;
-	ano = ano - 2000;
-		total = total + (ano * 365) +soma;
-	printf("\n\n");
-	ano = ano + 2000;
-	printf(" Calendario %d\\%d\n\n", ano, mes);
-	printf(" dom seg ter qua qui sex sab");
-	
-	matrix(dias[mes-1], total);
+		ano = ano - 2000;
+		total = total + (ano * 365) + soma;
+		printf("\n\n");
+		ano = ano + 2000;
+		printf(" Calendario %d\\%d\n\n", ano, mes);
+		printf(" dom seg ter qua qui sex sab");
+
+		matrix(dias[mes - 1], total);
 
 
-	return 0;
+		return 0;
 
+	}
 }
