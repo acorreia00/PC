@@ -16,7 +16,7 @@ void matrix(int dias, int total) {					//Funcao matriz para organizar os dias to
 	int mat[6][7], l, c, soma, fev;
 	soma = 0;
 	for (l = 0; l < 6; ++l) {
-		printf("\n");
+		printf("\n ");
 		for (c = 0; c < 7; ++c) {
 			soma++;
 			mat[l][c] = soma;
