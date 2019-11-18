@@ -1,9 +1,8 @@
-#define _CRT_SECURE_NO_WARNINGS
 #include<stdio.h>
 #include<stdlib.h>
 
 
-int bissexto(int ano, int mes) {
+int bissexto(int ano, int mes) {					//Funcao para descobrir se o ano e bisexto ou nao
 	int ctd = 0, b6 = 0;
 	for (ctd = 0; ctd <= ano; ctd = ctd + 4) {
 		b6++;
@@ -14,7 +13,7 @@ int bissexto(int ano, int mes) {
 	return b6;
 
 }
-void matrix(int dias, int total) {
+void matrix(int dias, int total) {					//Funcao matriz para organizar os dias todos e acertar com o primeiro dia do mes
 	int mat[6][7], l, c, soma, fev;
 	soma = 0;
 	for (l = 0; l < 6; ++l) {
@@ -45,30 +44,27 @@ void matrix(int dias, int total) {
 	}
 }
 int main() {
-	int mes, ano, total = 6, dias[12] = { 31 , 28 , 31 , 30 , 31 , 30 , 31 , 31 , 30 , 31 , 30 , 31 }, mescontrol = 0, soma = 0, b6;
+	int mes, ano, total = 6, dias[12] = { 31 , 28 , 31 , 30 , 31 , 30 , 31 , 31 , 30 , 31 , 30 , 31 }, mescontrol = 0, somam = 0, b6;
 	do {
-		printf("Introduza um ano e um mes:\n");
+		printf("Introduza um ano e um mes:\n");		//Pedir valores ano e mes entre 2000-2099 e 1-12 respetivamente
 		scanf_s("%d", &ano);
 		scanf_s("%d", &mes);
 
 	} while (!(mes >= 1 && mes <= 12 && ano >= 2000 && ano <= 2099));
 	while (mescontrol < (mes - 1)) {
-		soma = soma + dias[mescontrol];
+		somam = somam + dias[mescontrol];			//Somam e o total de dias ate ao mes escolhido dentro do ano escolhido
 		mescontrol++;
 	}
-	ano = ano - 2000;
-	b6 = bissexto(ano, mes);
-	total = (total + (ano * 365) + soma + b6);
-	total = total % 7;
+	ano = ano - 2000;								//Numero de anos desde 2000
+	b6 = bissexto(ano, mes);						//Numero de dias 29/2 que ja passaram desde 2000
+	total = (total + (ano * 365) + somam + b6);		//Numero de dias desde jan 2000 ate ao mes/ano escolhido
+	total = total % 7;								//Em que dia da semana comeca o mes
 	printf("\n\n");
-	ano = ano + 2000;
+	ano = ano + 2000;								//Ano para printar
 	printf(" Calendario %d\\%d\n\n", ano, mes);
 	printf(" Dom, Seg, Ter, Qua, Qui, Sex, Sab");
 	if (ano % 4 == 0 && mes == 2) {
-		dias[1] = 29;
+		dias[1] = 29;								//No caso do ano ser bisexto muda o total de dias de fevereiro para 29
 	}
-	matrix(dias[mes - 1], total);
-
-	system("pause");
-	return 0;
+	matrix(dias[mes - 1], total);					//Printar Dias Calendario
 }
