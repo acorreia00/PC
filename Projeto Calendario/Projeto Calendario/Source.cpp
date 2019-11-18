@@ -1,7 +1,6 @@
 #include<stdio.h>
 #include<stdlib.h>
 
-
 int bissexto(int ano, int mes) {					//Funcao para descobrir se o ano e bisexto ou nao
 	int ctd = 0, b6 = 0;
 	for (ctd = 0; ctd <= ano; ctd = ctd + 4) {
