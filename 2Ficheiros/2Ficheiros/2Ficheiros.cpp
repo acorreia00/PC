@@ -23,3 +23,15 @@ int main() {
 	fclose(fich1);
 	fclose(fich2);
 }
+
+
+/*
+float vector[8] = {3.1,2.7,5.4,2.9,11.1,2.705,12,-2.5};
+int i;
+FILE *fich;
+fich = fopen("vector.dat","w");
+for(i=0;i<0;i++){						}
+fprintf(fich, "%f\n", vector[i]);		}}fwrite(vector, sizeof(float),8 , fich);
+}										}
+fclose(fich);
+*/
