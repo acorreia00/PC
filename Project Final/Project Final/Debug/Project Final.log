@@ -1,5 +1,13 @@
 ﻿  T2_N47521_N47133.cpp
-C:\PC\Project Final\Project Final\T2_N47521_N47133.cpp(37,17): warning C4477: 'fscanf' : format string '%d' requires an argument of type 'int *', but variadic argument 1 has type 'float *'
+C:\PC\Project Final\Project Final\T2_N47521_N47133.cpp(38,17): warning C4477: 'fscanf' : format string '%d' requires an argument of type 'int *', but variadic argument 1 has type 'float *'
 C:\PC\Project Final\Project Final\T2_N47521_N47133.cpp(17,16): warning C4101: 'input2': unreferenced local variable
+C:\PC\Project Final\Project Final\T2_N47521_N47133.cpp(16,17): warning C4101: 'fich2': unreferenced local variable
 C:\PC\Project Final\Project Final\T2_N47521_N47133.cpp(17,24): warning C4101: 'input3': unreferenced local variable
+C:\PC\Project Final\Project Final\T2_N47521_N47133.cpp(16,26): warning C4101: 'fich3': unreferenced local variable
+C:\PC\Project Final\Project Final\T2_N47521_N47133.cpp(72,9): warning C4473: 'printf' : not enough arguments passed for format string
+C:\PC\Project Final\Project Final\T2_N47521_N47133.cpp(72,9): message : placeholders and their parameters expect 2 variadic arguments, but 1 were provided
+C:\PC\Project Final\Project Final\T2_N47521_N47133.cpp(72,9): message : the missing variadic argument 2 is required by format string '%c'
+C:\PC\Project Final\Project Final\T2_N47521_N47133.cpp(73,9): warning C4473: 'printf' : not enough arguments passed for format string
+C:\PC\Project Final\Project Final\T2_N47521_N47133.cpp(73,9): message : placeholders and their parameters expect 2 variadic arguments, but 1 were provided
+C:\PC\Project Final\Project Final\T2_N47521_N47133.cpp(73,9): message : the missing variadic argument 2 is required by format string '%c'
   Project Final.vcxproj -> C:\PC\Project Final\Debug\Project Final.exe

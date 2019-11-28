@@ -15,21 +15,22 @@ sinal readTxt(char nomeFich[20]) {
 	int a = 0;
 	FILE* fich1, * fich2, * fich3;
 	sinal input1, input2, input3;
-	fich1 = fopen("%s.txt", "r");
-	fich2 = fopen("sinal2.txt", "r");
-	fich3 = fopen("sinal3.txt", "r");
+	strcat(nomeFich, ".txt");
+	fich1 = fopen(nomeFich, "r");
+	/*fich2 = fopen("sinal2.txt", "r");
+	fich3 = fopen("sinal3.txt", "r");*/
 	if (fich1 == NULL) {
 		printf("\nErro ao abrir o ficheiro sinal1\n");
 		exit(1);
 	}
-	else if (fich2 == NULL) {
+	/*else if (fich2 == NULL) {
 		printf("\nErro ao abrir o ficheiro sinal2\n");
 		exit(1);
 	}
 	else if (fich3 == NULL) {
 		printf("\nErro ao abrir o ficheiro sinal3\n");
 		exit(1);
-	}
+	}*/
 	fscanf(fich1, "%d", &input1.fr);
 	fscanf(fich1, "\n%d", &input1.numA);
 	while (!feof(fich1)) {
@@ -68,8 +69,8 @@ int userInterface(){
 	int opcao = 0;
 	setlocale(LC_ALL, " ");
 	printf("1 - Abrir ficheiro de amostras\n");
-	printf("2 - Aplicar retifica%c%co de meia onda\n", 135, 227);
-	printf("3 - Aplicar retifica%c%co de onda completa\n", 227, 'ã');
+	printf("2 - Aplicar retifica%c%co de meia onda\n", 135);
+	printf("3 - Aplicar retifica%c%co de onda completa\n", 135);
 	printf("4 - Aplicar filtro RC\n");
 	printf("5 - Guardar ficheiro de resultados\n");
 	printf("6 - Sair do programa\n");
@@ -93,7 +94,7 @@ int main() {
 			printf("executada opcao %d\n", selector);
 			printf("Escolha o nome do ficheiro a abrir\n");
 			scanf("%s", &nome);
-			//readTxt();
+			//readTxt(name);
 		}
 		else if (selector == 2) {
 			printf("executada opcao %d\n", selector);
