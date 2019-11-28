@@ -1,0 +1,5 @@
+﻿  T2_N47521_N47133.cpp
+C:\PC\Project Final\Project Final\T2_N47521_N47133.cpp(37,17): warning C4477: 'fscanf' : format string '%d' requires an argument of type 'int *', but variadic argument 1 has type 'float *'
+C:\PC\Project Final\Project Final\T2_N47521_N47133.cpp(17,16): warning C4101: 'input2': unreferenced local variable
+C:\PC\Project Final\Project Final\T2_N47521_N47133.cpp(17,24): warning C4101: 'input3': unreferenced local variable
+  Project Final.vcxproj -> C:\PC\Project Final\Debug\Project Final.exe
