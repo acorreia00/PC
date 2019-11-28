@@ -10,13 +10,13 @@ typedef struct {
 	float volts[1000];
 }sinal;
 
-sinal readTxt(char nomeFich[20]) {
+sinal readTxt(char nome[25]) {
 
 	int a = 0;
 	FILE* fich1, * fich2, * fich3;
 	sinal input1, input2, input3;
-	strcat(nomeFich, ".txt");
-	fich1 = fopen(nomeFich, "r");
+	strcat(nome, ".txt");
+	fich1 = fopen(nome, "r");
 	/*fich2 = fopen("sinal2.txt", "r");
 	fich3 = fopen("sinal3.txt", "r");*/
 	if (fich1 == NULL) {
@@ -67,10 +67,10 @@ int ondaCompleta() {
 
 int userInterface(){
 	int opcao = 0;
-	setlocale(LC_ALL, " ");
+	setlocale(LC_ALL, "");
 	printf("1 - Abrir ficheiro de amostras\n");
-	printf("2 - Aplicar retifica%c%co de meia onda\n", 135);
-	printf("3 - Aplicar retifica%c%co de onda completa\n", 135);
+	printf("2 - Aplicar retifica%c%co de meia onda\n", 'ç', 'ã');
+	printf("3 - Aplicar retifica%c%co de onda completa\n", 'ç', 'ã');
 	printf("4 - Aplicar filtro RC\n");
 	printf("5 - Guardar ficheiro de resultados\n");
 	printf("6 - Sair do programa\n");
@@ -87,14 +87,14 @@ int main() {
 	
 	char nome[25];
 	int selector = 0;
-	while (selector !=6) {
-		int selector = 0;
+	do{
+
 		selector = userInterface();
 		if (selector == 1) {
 			printf("executada opcao %d\n", selector);
 			printf("Escolha o nome do ficheiro a abrir\n");
 			scanf("%s", &nome);
-			//readTxt(name);
+			readTxt(nome);
 		}
 		else if (selector == 2) {
 			printf("executada opcao %d\n", selector);
@@ -115,6 +115,6 @@ int main() {
 		else if (selector == 6) {
 			exit(1);
 		}
-	}
+	}while (selector > 0 && selector < 6);
 
 }
