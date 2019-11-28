@@ -1,3 +1,4 @@
+#define _CRT_SECURE_NO_WARNINGS
 #include<stdio.h>
 #include<stdlib.h>
 
@@ -43,6 +44,8 @@ void matrix(int dias, int total) {					//Funcao matriz para organizar os dias to
 	}
 }
 int main() {
+	FILE* fich;
+	fich = fopen("valores.txt", "a+");
 	int mes, ano, total = 6, dias[12] = { 31 , 28 , 31 , 30 , 31 , 30 , 31 , 31 , 30 , 31 , 30 , 31 }, mescontrol = 0, somam = 0, b6;
 	do {
 		printf("Introduza um ano e um mes:\n");		//Pedir valores ano e mes entre 2000-2099 e 1-12 respetivamente
@@ -66,4 +69,7 @@ int main() {
 		dias[1] = 29;								//No caso do ano ser bisexto muda o total de dias de fevereiro para 29
 	}
 	matrix(dias[mes - 1], total);					//Printar Dias Calendario
+
+	fprintf(fich, "%d/%d\n", mes, ano);
+	fclose(fich);
 }
