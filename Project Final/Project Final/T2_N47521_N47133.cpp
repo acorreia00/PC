@@ -4,68 +4,66 @@
 #include <math.h>
 #include <locale.h>
 #include <string.h>
+#define MAX_INPUT 1500
 
 typedef struct {
 	int fr, numA;
-	float volts[1000];
+	float *volts[];
 }sinal;
 
 sinal readTxt(char nome[25]) {
-
 	int a = 0;
-	FILE* fich1, * fich2, * fich3;
-	sinal input1, input2, input3;
-	strcat(nome, ".txt");
+	FILE* fich1;
+	sinal input1 = (sinal*)malloc(sizeof(input1.numA));	strcat(nome, ".txt");
 	fich1 = fopen(nome, "r");
-	/*fich2 = fopen("sinal2.txt", "r");
-	fich3 = fopen("sinal3.txt", "r");*/
+
 	if (fich1 == NULL) {
 		printf("\nErro ao abrir o ficheiro sinal1\n");
-		exit(1);
-	}
-	/*else if (fich2 == NULL) {
-		printf("\nErro ao abrir o ficheiro sinal2\n");
-		exit(1);
-	}
-	else if (fich3 == NULL) {
-		printf("\nErro ao abrir o ficheiro sinal3\n");
-		exit(1);
-	}*/
-	fscanf(fich1, "%d", &input1.fr);
-	fscanf(fich1, "\n%d", &input1.numA);
-	while (!feof(fich1)) {
-
-		fscanf(fich1, "%d", &input1.volts[a]);
-		a++;
+		exit(EXIT_FAILURE);
 	}
 
+	fscanf(fich1, "%d", &input1->fr);
+	fscanf(fich1, "%d", &input1->numA);
+
+	for (int i = input1->numA, index = 0;i;i--, index++) {
+		fscanf(fich1, "%f", &(input1->volts[index]));
+		printf("%d\n", index);
+	}
 	fclose(fich1);
-
 	return input1;
 }
 
-int meiaOnda() {
-	int a=0;
-	return a;
+sinal* meiaOnda(sinal* fich1) {
+	volts[];
+	for (int i = 0;i == ;i++) {
+
+
+	};
+	return volts[];
 }
 
-int ondaCompleta() {
-	int a=0;
-	return a;
-}
-/*sinal writeTxt() {
+/*sinal* ondaCompleta(sinal* fich1) {
+	sinal* numActd;
+
+	for (ctd=0; numA->ctd;
+	printf();
+
+	return ;
+}*/
+
+sinal* writeTxt(char nome[25]) {
 	FILE* ficheirosaida;
-	sinal amostra1, amostra2;
-	if (amostra1.numA != amostra2.numA) { //dif numero de amostras 
+	sinal* amostra1, amostra2;
+	if (amostra1->numA != amostra2.numA) { //dif numero de amostras 
 		printf("\n Numero de amostras dos sinais diferentes\n");
 		exit(1);
 	}//parar proj
-	ficheirosaida = fopen("resultado.csv", "w");
+	ficheirosaida = fopen("resultado.csv", "a+");
 	fprintf(ficheirosaida, "#Tempo    Entrada    Saída");
 	return amostra1;
-}*/
+}
 
-int userInterface(){
+int userInterface() {
 	int opcao = 0;
 	setlocale(LC_ALL, "");
 	printf("1 - Abrir ficheiro de amostras\n");
@@ -84,25 +82,26 @@ int userInterface(){
 
 
 int main() {
-	
+
 	char nome[25];
 	int selector = 0;
-	do{
+	sinal* fich1;
+	do {
 
 		selector = userInterface();
 		if (selector == 1) {
 			printf("executada opcao %d\n", selector);
 			printf("Escolha o nome do ficheiro a abrir\n");
 			scanf("%s", &nome);
-			readTxt(nome);
+			fich1 = readTxt(nome);
 		}
 		else if (selector == 2) {
 			printf("executada opcao %d\n", selector);
-			meiaOnda();
+			meiaOnda(fich1);
 		}
 		else if (selector == 3) {
 			printf("executada opcao %d\n", selector);
-			ondaCompleta();
+			//ondaCompleta(fich1);
 		}
 		else if (selector == 4) {
 			printf("executada opcao %d\n", selector);
@@ -110,11 +109,11 @@ int main() {
 		else if (selector == 5) {
 			printf("Escolha o nome do ficheiro a guardar\n");
 			scanf("%s", &nome);
-			printf("executada opcao %d\n", selector);
+			fich1 = writeTxt(nome);
 		}
 		else if (selector == 6) {
 			exit(1);
 		}
-	}while (selector > 0 && selector < 6);
-
+	} while (selector > 0 && selector < 6);
+	free(fich1);
 }
