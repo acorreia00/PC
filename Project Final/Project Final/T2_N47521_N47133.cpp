@@ -22,11 +22,11 @@ sinal readTxt(char nome[25]) {
 		exit(EXIT_FAILURE);
 	}
 
-	fscanf(fich1, "%d", &input1->fr);
-	fscanf(fich1, "%d", &input1->numA);
+	fscanf(fich1, "%d", &input1.fr);
+	fscanf(fich1, "%d", &input1.numA);
 
-	for (int i = input1->numA, index = 0;i;i--, index++) {
-		fscanf(fich1, "%f", &(input1->volts[index]));
+	for (int i = input1.numA, index = 0;i;i--, index++) {
+		fscanf(fich1, "%f", &(input1.volts[index]));
 		printf("%d\n", index);
 	}
 	fclose(fich1);
@@ -34,7 +34,7 @@ sinal readTxt(char nome[25]) {
 }
 
 sinal* meiaOnda(sinal* fich1) {
-	volts[];
+	input1.volts[];
 	for (int i = 0;i == ;i++) {
 
 
