@@ -70,6 +70,6 @@ int main() {
 	}
 	matrix(dias[mes - 1], total);					//Printar Dias Calendario
 
-	fprintf(fich, "%d/%d\n", mes, ano);
+	fprintf(fich, "%02d/%d\n", mes, ano);
 	fclose(fich);
 }
